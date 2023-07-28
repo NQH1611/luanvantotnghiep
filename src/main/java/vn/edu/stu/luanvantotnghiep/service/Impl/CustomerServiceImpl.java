@@ -141,4 +141,10 @@ public class CustomerServiceImpl implements ICustomerService{
         // TODO Auto-generated method stub
         return gCustomerRepository.save(customer);
     }
+
+    @Override
+    public List<Customer> findAll() {
+        // TODO Auto-generated method stub
+        return gCustomerRepository.findAll();
+    }
 }

@@ -59,6 +59,13 @@ public class CustomerController {
         if(lstCus != null) return new ResponseEntity<>(lstCus, HttpStatus.OK);
         return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
     }
+    @GetMapping("/customerall")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
+    public ResponseEntity<List<Customer>> getCustomer(){
+        List<Customer> lstCus = gCustomerService.findAll();
+        if(lstCus != null) return new ResponseEntity<>(lstCus, HttpStatus.OK);
+        return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+    }
     @GetMapping("/customer/{id}")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_CUSTOMER')")
     public ResponseEntity<Customer> getCustomerById(@PathVariable("id") int id){

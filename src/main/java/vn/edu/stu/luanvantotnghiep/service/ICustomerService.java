@@ -15,4 +15,5 @@ public interface ICustomerService {
     public Integer countCus();
     public Customer findByUsernameAndEmail(String username, String email);
     public Customer updatePassword(Customer customer);
+    public List<Customer> findAll();
 }
