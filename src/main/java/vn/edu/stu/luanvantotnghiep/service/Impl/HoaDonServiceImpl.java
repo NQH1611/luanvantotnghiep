@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import vn.edu.stu.luanvantotnghiep.model.HoaDon;
@@ -113,13 +115,14 @@ public class HoaDonServiceImpl implements IHoaDonService{
         return hoaDonRepository.save(hoaDon);
     }
     public Integer countHoaDon(){
-        return hoaDonRepository.countByTrangThai(1);
+        return (int) hoaDonRepository.count();
     }
 
     @Override
     public List<HoaDon> find10HoaDons() {
         // TODO Auto-generated method stub
-        return hoaDonRepository.findFirst10ByTrangThaiOrderByCreateDateDesc(1);
+        PageRequest pageable = PageRequest.of(0, 10);
+        return hoaDonRepository.findAllByOrderByCreateDateDesc(pageable);
     }
     
 }

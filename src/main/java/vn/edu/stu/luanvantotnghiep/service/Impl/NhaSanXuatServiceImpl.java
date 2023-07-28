@@ -60,7 +60,7 @@ public class NhaSanXuatServiceImpl implements INhaSanXuatService{
     @Override
     public Integer countNhaSanXuat() {
         // TODO Auto-generated method stub
-        return nhaSanXuatRepository.countByActive(1);
+        return (int) nhaSanXuatRepository.count();
     }
 
     @Override

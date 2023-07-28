@@ -85,7 +85,7 @@ public class DashBoardServiceImpl implements IDashBoardService{
         Integer ncc = nhaCungCapRepository.countByActiveAndCreateDate(active, createDate);
         Integer nsx = nhaSanXuatRepository.countByActiveAndCreateDate(active, createDate);
         Integer km = khuyenMaiRepository.countByActiveAndCreateDate(active, createDate);
-        Integer hd = hoaDonRepository.countByTrangThaiAndCreateDate(active, createDate);
+        Integer hd = hoaDonRepository.countByCreateDate(createDate);
         DashBoard data = findByDateBefore();
         System.out.println(Calendar.getInstance().getTime());
         System.out.println("So Nhan Vien ngay hom nay" + cus);

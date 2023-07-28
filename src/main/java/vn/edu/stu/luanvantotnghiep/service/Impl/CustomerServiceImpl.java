@@ -127,7 +127,7 @@ public class CustomerServiceImpl implements ICustomerService{
         }
     }
     public Integer countCus(){
-        return gCustomerRepository.countByActive(1);
+        return (int) gCustomerRepository.count();
     }
 
     @Override

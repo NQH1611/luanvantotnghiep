@@ -60,7 +60,7 @@ public class LoaiSanPhamServiceImpl implements ILoaiSanPhamService{
     @Override
     public Integer countLoaiSanPham() {
         // TODO Auto-generated method stub
-        return loaiSanPhamRepository.countByActive(1);
+        return (int) loaiSanPhamRepository.count();
     }
     @Override
     public LoaiSanPham findByName(String name){

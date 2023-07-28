@@ -73,7 +73,7 @@ public class SanPhamServicImpl implements ISanPhamService{
     @Override
     public Integer countSanPham() {
         // TODO Auto-generated method stub
-        return sanPhamRepository.countByTrangThai(1);
+        return (int) sanPhamRepository.count();
     }
     @Override
     public List<SanPham> findSanPhamByNhaSanXuatActive(Integer id){

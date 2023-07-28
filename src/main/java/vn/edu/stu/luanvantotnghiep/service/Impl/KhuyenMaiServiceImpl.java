@@ -60,6 +60,6 @@ public class KhuyenMaiServiceImpl implements IKhuyenMaiService{
     @Override
     public Integer countKhuyenMai() {
         // TODO Auto-generated method stub
-        return khuyenMaiRepository.countByActive(1);
+        return (int) khuyenMaiRepository.count();
     }
 }
