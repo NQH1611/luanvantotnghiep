@@ -24,8 +24,8 @@ public interface SanPhamRepository extends JpaRepository<SanPham, Integer>{
     Integer countByTrangThaiAndCreateDate(Integer active, Date createDate);
     List<SanPham> findByNhaSanXuat(NhaSanXuat nhaSanXuat);
     List<SanPham> findByDanhMucAndTrangThai(LoaiSanPham loaiSanPham, Integer trangThai);
-    @Query(value = "SELECT DISTINCT * FROM san_pham a JOIN thuoc_tinh b on a.id = b.san_pham_id JOIN nha_san_xuat c ON a.nha_san_xuat = c.id JOIN danh_muc d ON a.danh_muc = d.id WHERE a.ten_san_pham LIKE %?1% OR b.gia_tri_thuoc_tinh LIKE %?1% OR c.ten_nha_san_xuat LIKE %?1% OR d.ten_danh_muc LIKE %?1% AND a.trang_thai = 1" , nativeQuery = true)
-    List<SanPham> search(String keyword);
+    // @Query(value = "SELECT DISTINCT * FROM san_pham a JOIN thuoc_tinh b on a.id = b.san_pham_id JOIN nha_san_xuat c ON a.nha_san_xuat = c.id JOIN danh_muc d ON a.danh_muc = d.id WHERE a.ten_san_pham LIKE %?1% OR b.gia_tri_thuoc_tinh LIKE %?1% OR c.ten_nha_san_xuat LIKE %?1% OR d.ten_danh_muc LIKE %?1% AND a.trang_thai = 1" , nativeQuery = true)
+    // List<SanPham> search(String keyword);
     List<SanPham> findByNhaSanXuatAndDanhMucAndTrangThaiAndGiaBetween(NhaSanXuat nhasanxuat, LoaiSanPham loaisanpham,Integer trangThai, Double tugia, Double dengia);
     @Query(value="SELECT * FROM san_pham where trang_thai = 1 order by gia desc limit 10", nativeQuery = true)
     List<SanPham>  findSanPhamByGiaCaoNhat();

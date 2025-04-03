@@ -1,5 +1,6 @@
 package vn.edu.stu.luanvantotnghiep.service.Impl;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Optional;
@@ -85,7 +86,9 @@ public class SanPhamServicImpl implements ISanPhamService{
     }
     @Override
     public List<SanPham> search(String keyword){
-        return sanPhamRepository.search(keyword);
+        // return sanPhamRepository.search(keyword);
+        List<SanPham> a = new ArrayList<>();
+        return a;
     }
 
     @Override
